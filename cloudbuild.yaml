@@ -81,7 +81,10 @@ steps:
   args: 
   - '-c'
   - | 
-      if [ -d "environments/dev || environments/prod " ]; then
+      if [ -d "environments/dev] then
+       cd environments/dev 
+       terraform apply -auto-approve
+      elseif[ -d "environments/prod " ]then
         cd environments/$BRANCH_NAME      
         terraform apply -auto-approve
       else
