@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "PROJECT_ID-tfstate"
+    bucket = "glass-marker-349216-tfstate"
     prefix = "env/dev"
   }
 }
