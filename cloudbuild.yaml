@@ -83,7 +83,7 @@ steps:
   - | 
       if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME 
-        if [ $BRANCH_NAME == 'Dev' || $BRANCH_NAME == 'Prod' ]; then    
+        if [ $BRANCH_NAME == 'dev' || $BRANCH_NAME == 'prod' ]; then    
             terraform apply -auto-approve 
         else
             echo "***************************** SKIPPING APPLYING *******************************"
