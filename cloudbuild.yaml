@@ -80,20 +80,12 @@ steps:
   entrypoint: 'sh'
   args: 
   - '-c'
-  - | 
-<<<<<<< HEAD
-      if [ -d "environments/dev/" ]; then
-=======
-     if [ -d "environments/dev/" ]; then
->>>>>>> 777f5824f0331e4a4f8b1f618aced439b8b02b57
-         cd environments/dev
-         terraform apply -auto-approve
-     elif [ -d "environments/prod/" ]; then
-         cd environments/prod
-         terraform apply -auto-approve
-     else
-         echo "***************************** SKIPPING APPLYING ****************************"
-         echo "Branch '$BRANCH_NAME' does not represent an oficial environment."
-         echo "*******************************************************************************"
-     fi
+      if [ -d "environments/$BRANCH_NAME/" ]; then
+        cd environments/$BRANCH_NAME      
+        terraform apply -auto-approve
+      else
+        echo "***************************** SKIPPING APPLYING *******************************"
+        echo "Branch '$BRANCH_NAME' does not represent an oficial environment."
+        echo "*******************************************************************************"
+      fi
 # [END tf-apply]      
