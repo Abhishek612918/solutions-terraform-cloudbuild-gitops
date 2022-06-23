@@ -81,7 +81,11 @@ steps:
   args: 
   - '-c'
   - | 
+<<<<<<< HEAD
       if [ -d "environments/dev/" ]; then
+=======
+     if [ -d "environments/dev/" ]; then
+>>>>>>> 777f5824f0331e4a4f8b1f618aced439b8b02b57
          cd environments/dev
          terraform apply -auto-approve
      elif [ -d "environments/prod/" ]; then
